@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Goodbye from Random secret based Hash Password Generators (RSHPG)</title>
+</head>
+<body>
+  <h1>Goodbye!</h1>
+  <p>We're sorry to see you go. If you have any feedback, please let us know.</p>
+  <p>Thank you for using the Hash Password Autofill Extension.</p>
+  <p>Don't forget to export your Random Value otherwise you won't be able to generate passwords again.</p>
+
+  <h2>Your Random Value</h2>
+  <input type="text" id="randomValue" readonly size="50">
+  <button id="copyBtn">Copy to Clipboard</button>
+
+  <script>
+    chrome.storage.local.get('randomValue', (result) => {
+      document.getElementById('randomValue').value = result.randomValue || 'Not set';
+    });
+
+    document.getElementById('copyBtn').addEventListener('click', () => {
+      const input = document.getElementById('randomValue');
+      input.select();
+      document.execCommand('copy');
+      alert('Copied to clipboard!');
+    });
+  </script>

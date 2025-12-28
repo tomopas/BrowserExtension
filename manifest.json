@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Random secret based Hash Password Generators (RSHPG)",
+  "version": "1.0",
+  "description": "An extension that works similar to Password Managers without relying on a third party. You only need to remember a Master Secret and a Website Secret pattern and generate a Random Value.",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Autofill Password"
+  }
+}

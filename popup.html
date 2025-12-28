@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Password Generator</title>
+  <style>
+    body { width: 300px; padding: 10px; }
+    input { width: 100%; margin-bottom: 10px; }
+    button { width: auto; margin-bottom: 10px; display: block; }
+    .hidden { display: none; }
+    label { display: flex; align-items: center; margin-bottom: 10px; }
+  </style>
+</head>
+<body>
+  <button id="showRandomBtn">Show Random Value</button>
+  <div id="randomValueSection" class="hidden">
+    <input type="text" id="randomValueDisplay" readonly size="50">
+    <button id="editBtn">Edit</button>
+    <button id="generateNewBtn">Generate New Random Value</button>
+    <button id="exportBtn">Export Random Value</button>
+  </div>
+
+  <h3>Generate Password</h3>
+  <label for="masterSecret">Master Secret:</label>
+  <input type="password" id="masterSecret">
+  <label for="websiteSecret">Website Secret:</label>
+  <input type="text" id="websiteSecret">
+
+  <label for="autofillSwitch"><input type="checkbox" id="autofillSwitch"> Enable Autofill</label>
+
+  <button id="generateBtn">Generate Password</button>
+  <button id="autofillBtn" class="hidden">Autofill</button>
+
+  <div id="generatedPassword" class="hidden">
+    <p>Generated Password: <span id="passwordText"></span></p>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
